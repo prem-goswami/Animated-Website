@@ -1,0 +1,133 @@
+.fixed-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 1rem;
+  z-index: 50;
+  height: 4rem;
+  border: none;
+  transition: all 0.7s;
+  border-radius: 15px;
+}
+.header-center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.floating-nav {
+  background-color: black;
+  border-radius: 0.5rem;
+  border: 1px solid #ffffff33; /* semi-transparent white */
+}
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.productsButton {
+  background-color: red;
+}
+
+.productsButton {
+  background-color: black;
+}
+
+.navElements {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.hidden-md {
+  display: none;
+}
+
+.nav-hover-btn {
+  position: relative;
+  margin-left: 2.5rem;
+  font-family: "general";
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #f0f9ff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-hover-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -0.125rem;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  background-color: white;
+  transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.nav-hover-btn:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.audioButton {
+  margin-left: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.indicator-line {
+  height: 0.25rem;
+  width: 1px;
+  /* border-radius: 9999px; */
+  background-color: white;
+  /* transition: all 0.2s ease-out; */
+}
+
+.indicator-line.active {
+  animation: indicator-line 0.5s ease infinite;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+@keyframes indicator-line {
+  0% {
+    height: 4px;
+    transform: translateY(0);
+  }
+  50% {
+    height: 16px;
+    transform: translateY(-4px);
+  }
+  100% {
+    height: 4px;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .fixed-header {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hidden-md {
+    display: block;
+  }
+}

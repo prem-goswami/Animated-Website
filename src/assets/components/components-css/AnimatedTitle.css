@@ -1,0 +1,32 @@
+.words {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* default gap */
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.animated-word {
+  font-family: "zentry";
+  font-feature-settings: "ss01" on;
+  font-weight: 100;
+  text-transform: uppercase;
+  opacity: 0;
+  display: inline-block;
+  transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+  transform-origin: 50% 50% -150px !important;
+  will-change: opacity, transform;
+}
+@media (max-width: 650px) {
+  .words {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .animated-word {
+    font-size: 2rem;
+    gap: 10px;
+    line-height: 2rem;
+  }
+}

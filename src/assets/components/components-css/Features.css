@@ -1,0 +1,218 @@
+.features-section {
+  background-color: black;
+  padding-bottom: 13rem;
+}
+
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  max-width: 100%;
+}
+
+.text-container {
+  text-align: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.text-lg-blue {
+  font-family: "circular-web", sans-serif;
+  font-size: 3.125rem;
+  color: black;
+}
+.text-lg-blue-opacity {
+  font-family: "circular-web", sans-serif;
+  font-size: 2.125rem;
+  color: black;
+  opacity: 0.5;
+}
+
+.main-bento-tilt {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  margin-bottom: 1.75rem;
+  height: 24rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.375rem;
+}
+
+.secondary-bento-tilt {
+  display: grid;
+  height: 135vh;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.bento-tilt-1 {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  transition: transform 0.3s ease-out;
+  grid-row: span 1;
+}
+
+.bento-tilt-2 {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  transition: transform 0.3s ease-out;
+  grid-row: span 1;
+  /* margin-left: 8rem; */
+}
+
+.bento-tilt-3 {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  transition: transform 0.3s ease-out;
+  /* margin-right: 3.5rem; */
+}
+
+.bento-tilt-4 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  transition: transform 0.3s ease-out;
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.flex-violet-col {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #a78bfa;
+  padding: 1.25rem;
+}
+
+.flex-violet-col h1 {
+  text-transform: uppercase;
+  font-family: "zentry", sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  max-width: 16rem;
+  color: black;
+}
+
+.flex-violet-col b {
+  font-family: "zentry";
+  font-feature-settings: "ss01" on;
+}
+
+.arrow {
+  margin: 1.25rem;
+  transform: scale(5);
+  align-self: flex-end;
+}
+
+.full-object-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* bento card styling */
+
+.bento-card-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bento-card-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.bento-card-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  color: #f0f9ff;
+}
+
+.bento-title {
+  text-transform: uppercase;
+  font-family: "zentry", sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  color: white;
+}
+
+.special-font {
+  font-family: "zentry";
+  font-feature-settings: "ss01" on;
+}
+
+.bento-card-description {
+  margin-top: 0.75rem;
+  max-width: 16rem;
+  font-size: 0.75rem;
+}
+
+.button-hsla {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  display: flex;
+  width: fit-content;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.25rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: white;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: black;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .bento-tilt {
+    height: 65vh;
+  }
+  .bento-tilt-1 {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  .bento-tilt-2 {
+    grid-column: span 1;
+    margin-left: 0;
+  }
+  .bento-tilt-3 {
+    grid-column: span 1;
+    margin-right: 0;
+  }
+  .bento-card-description {
+    font-size: 1rem;
+  }
+}
