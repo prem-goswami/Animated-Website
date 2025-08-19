@@ -1,3 +1,27 @@
+@media (max-width: 768px) {
+  .bento-tilt_5 {
+    grid-column: 1 / -1 !important;
+    width: 100vw !important;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  .bento-tilt_5 video,
+  .full-object-cover {
+    width: 100vw !important;
+    height: 40vh !important;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.375rem;
+  }
+}
 .features-section {
   background-color: black;
   padding-bottom: 13rem;
@@ -22,12 +46,12 @@
 .text-lg-blue {
   font-family: "circular-web", sans-serif;
   font-size: 3.125rem;
-  color: black;
+  color: white;
 }
 .text-lg-blue-opacity {
   font-family: "circular-web", sans-serif;
   font-size: 2.125rem;
-  color: black;
+  color: white;
   opacity: 0.5;
 }
 
@@ -48,6 +72,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 1.75rem;
+  perspective: 700px;
 }
 
 .bento-tilt-1 {

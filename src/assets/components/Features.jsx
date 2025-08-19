@@ -3,7 +3,7 @@ import { TiLocationArrow } from "react-icons/ti";
 import "./components-css/Features.css";
 
 export const BentoTilt = ({ children, className = "" }) => {
-  const [transformStyle, setTransformStyle] = useState("");
+  const [transformStyle, setTransformStyle] = useState({});
   const itemRef = useRef(null);
 
   const handleMouseMove = (event) => {
@@ -18,16 +18,19 @@ export const BentoTilt = ({ children, className = "" }) => {
     const tiltX = (relativeY - 0.5) * 5;
     const tiltY = (relativeX - 0.5) * -5;
 
-    const newTransform = {
+    setTransformStyle({
       transform: `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(.95, .95, .95)`,
-      transformStyle: "preserve-3d",
       transition: "transform 0.2s ease-out",
-    };
-    setTransformStyle(newTransform);
+      willChange: "transform",
+    });
   };
 
   const handleMouseLeave = () => {
-    setTransformStyle("");
+    setTransformStyle({
+      transform: "none",
+      transition: "transform 0.2s ease-out",
+      willChange: "transform",
+    });
   };
 
   return (
@@ -36,7 +39,7 @@ export const BentoTilt = ({ children, className = "" }) => {
       className={className}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transform: transformStyle }}
+      style={transformStyle}
     >
       {children}
     </div>
@@ -98,7 +101,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 };
 
 const Features = () => (
-  <section className="fetures-section">
+  <section className="features-section">
     <div className="main-container">
       <div className="text-container">
         <p className="text-lg-blue">Into the Metagame Layer</p>
@@ -172,7 +175,7 @@ const Features = () => (
           </div>
         </BentoTilt>
 
-        <BentoTilt className="bento-tilt_4">
+        <BentoTilt className="bento-tilt_5">
           <video
             src="videos/feature-5.mp4"
             loop

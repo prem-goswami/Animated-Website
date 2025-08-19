@@ -1,3 +1,14 @@
+.animated-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-transform: uppercase;
+  line-height: 0.8;
+  color: black;
+  justify-content: center;
+  text-align: center;
+}
+
 .words {
   display: flex;
   justify-content: center;

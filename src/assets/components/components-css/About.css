@@ -20,20 +20,18 @@
   text-transform: uppercase;
 }
 
-.animated-title {
-  gap: 0.25rem;
-  font-size: 7rem;
-  text-transform: uppercase;
-  line-height: 0.8;
+.mt5-text-center {
+  margin-top: 1.25rem;
   color: black;
-  justify-content: center;
   text-align: center;
+  font-size: 4rem;
 }
 .about-subtext {
   font-family: "general";
-  font-size: 0.875rem; /* same as text-sm */
   text-transform: uppercase;
   text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .clip {
@@ -65,16 +63,22 @@
 }
 
 @media (min-width: 768px) {
-  .about-text-container p {
+  /* .about-text-container p {
     font-size: 10px;
-  }
+  } */
   .animated-title {
     font-size: 6rem;
   }
-  .about-subtext {
-    font-size: 10px;
-  }
+  /* .about-subtext {
+    font-size: 30px;
+  } */
   .about-image {
     width: 30vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .animated-title {
+    font-size: 4rem;
   }
 }

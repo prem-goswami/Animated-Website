@@ -155,10 +155,11 @@
 @media (max-width: 650px) {
   .gamingText {
     font-size: 7rem;
-    z-index: 0;
   }
   .introText h1 {
     font-size: 7rem;
-    z-index: 0;
+  }
+  .clickPath {
+    display: none;
   }
 }
