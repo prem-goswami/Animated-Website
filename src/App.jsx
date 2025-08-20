@@ -10,9 +10,12 @@ import Features from "./assets/components/Features";
 import Loader from "./assets/components/Loader";
 import Contact from "./assets/components/Contact";
 import Footer from "./assets/components/Footer";
+import AlertPage from "./assets/components/AlertPage";
 
 export const App = () => {
   const [loading, setLoading] = React.useState(true);
+  const [showAlert, setShowAlert] = React.useState(true);
+  const [soundEnabled, setSoundEnabled] = React.useState(false);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -43,13 +46,24 @@ export const App = () => {
   }
 
   return (
-    <main>
-      <NavBar />
-      <Hero />
-      <About />
-      <Features />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      {showAlert && (
+        <AlertPage
+          onEnableSound={() => {
+            setSoundEnabled(true);
+            setShowAlert(false);
+          }}
+          onClose={() => setShowAlert(false)}
+        />
+      )}
+      <main>
+        <NavBar soundEnabled={soundEnabled} setSoundEnabled={setSoundEnabled} />
+        <Hero />
+        <About />
+        <Features />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 };

@@ -5,11 +5,9 @@ import { TiLocationArrow } from "react-icons/ti";
 import "./components-css/NavBar.css";
 import Button from "./Button";
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
-const NavBar = () => {
-  // State for toggling audio and visual indicator
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+const navItems = ["Features", "About", "Contact"];
+const NavBar = ({ soundEnabled, setSoundEnabled }) => {
+  // Use soundEnabled prop directly for audio and indicator
 
   // Refs for audio and navigation container
   const audioElementRef = useRef(null);
@@ -19,20 +17,18 @@ const NavBar = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Toggle audio and visual indicator
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prev) => !prev);
-    setIsIndicatorActive((prev) => !prev);
+  const handleSoundToggle = () => {
+    setSoundEnabled(!soundEnabled);
   };
 
-  // Manage audio playback
+  // Manage audio playback directly from soundEnabled
   useEffect(() => {
-    if (isAudioPlaying) {
+    if (soundEnabled) {
       audioElementRef.current.play();
     } else {
       audioElementRef.current.pause();
     }
-  }, [isAudioPlaying]);
+  }, [soundEnabled]);
 
   useEffect(() => {
     if (currentScrollY === 0) {
@@ -90,19 +86,12 @@ const NavBar = () => {
               ))}
             </div>
 
-            <button onClick={toggleAudioIndicator} className="audioButton">
-              <audio
-                ref={audioElementRef}
-                // style={{ display: "none" }}
-                src="/audio/loop.mp3"
-                loop
-              />
+            <button onClick={handleSoundToggle} className="audioButton">
+              <audio ref={audioElementRef} src="/audio/loop.mp3" loop />
               {[1, 2, 3, 4].map((bar) => (
                 <div
                   key={bar}
-                  className={`indicator-line ${
-                    isIndicatorActive ? "active" : ""
-                  }`}
+                  className={`indicator-line ${soundEnabled ? "active" : ""}`}
                   style={{
                     animationDelay: `${bar * 0.1}s`,
                   }}

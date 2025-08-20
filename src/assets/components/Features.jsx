@@ -101,7 +101,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
 };
 
 const Features = () => (
-  <section className="features-section">
+  <section className="features-section" id="features">
     <div className="main-container">
       <div className="text-container">
         <p className="text-lg-blue">Into the Metagame Layer</p>
