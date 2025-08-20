@@ -9,7 +9,10 @@ const Footer = () => (
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
-      <p className="footer-credit">Made with ❤️ by Prem Goswami</p>
+      <p className="footer-credit">
+        Built with React + GSAP, fueled by creativity and passion | Made with ❤️
+        by Prem Goswami.
+      </p>
     </div>
   </footer>
 );
