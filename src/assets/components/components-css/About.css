@@ -63,15 +63,10 @@
 }
 
 @media (min-width: 768px) {
-  /* .about-text-container p {
-    font-size: 10px;
-  } */
   .animated-title {
     font-size: 6rem;
   }
-  /* .about-subtext {
-    font-size: 30px;
-  } */
+
   .about-image {
     width: 30vw;
   }

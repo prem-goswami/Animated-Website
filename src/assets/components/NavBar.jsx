@@ -7,9 +7,6 @@ import Button from "./Button";
 
 const navItems = ["Features", "About", "Contact"];
 const NavBar = ({ soundEnabled, setSoundEnabled }) => {
-  // Use soundEnabled prop directly for audio and indicator
-
-  // Refs for audio and navigation container
   const audioElementRef = useRef(null);
   const navContainerRef = useRef(null);
 
@@ -32,15 +29,12 @@ const NavBar = ({ soundEnabled, setSoundEnabled }) => {
 
   useEffect(() => {
     if (currentScrollY === 0) {
-      // Topmost position: show navbar without floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
       setIsNavVisible(false);
       navContainerRef.current.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
-      // Scrolling up: show navbar with floating-nav
       setIsNavVisible(true);
       navContainerRef.current.classList.add("floating-nav");
     }
@@ -60,7 +54,6 @@ const NavBar = ({ soundEnabled, setSoundEnabled }) => {
     <div ref={navContainerRef} className="fixed-header">
       <header className="header-center">
         <nav className="navbar">
-          {/* Logo and Product button */}
           <div className="navButton">
             <img src="/img/logo.png" alt="logo" style={{ width: "2.5rem" }} />
 
@@ -71,8 +64,6 @@ const NavBar = ({ soundEnabled, setSoundEnabled }) => {
               className="productsButton"
             />
           </div>
-
-          {/* Navigation Links and Audio Button */}
           <div className="navElements">
             <div className="hidden-md">
               {navItems.map((item, index) => (
