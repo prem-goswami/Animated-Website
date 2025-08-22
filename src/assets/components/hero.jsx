@@ -78,7 +78,7 @@ export const Hero = () => {
     }
   );
 
-  const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
+  const getVideoSrc = (index) => `/videos/hero-${index}.mp4`;
 
   return (
     <section className="intro-container">
@@ -90,6 +90,7 @@ export const Hero = () => {
               src={getVideoSrc((currentIndex % totalVideos) + 1)}
               loop
               muted
+              autoPlay
               id="current-video"
               onLoadedData={handleVideoLoad}
               className="minVid"
@@ -101,6 +102,7 @@ export const Hero = () => {
           src={getVideoSrc(currentIndex)}
           loop
           muted
+          autoPlay
           id="next-video"
           className="next-video-1"
           onLoadedData={handleVideoLoad}
